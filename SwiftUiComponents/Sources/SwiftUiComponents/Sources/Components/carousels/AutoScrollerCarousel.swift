@@ -67,18 +67,18 @@ struct AutoScrollerCarousel: View {
 }
 
 
-struct Previewss: PreviewProvider {
-    var myImagesArray: [UIImage] = []
-    static var previews: some View {
-        
-        
-        // Do this for each image.
-        let image = UIImage(named: ".image1") ?? UIImage()
-        self.myImagesArray.append(image)
-        
-        AutoScrollerCarousel(imageNames: myImagesArray)
-    }
-}
+//struct Previewss: PreviewProvider {
+//    var myImagesArray: [UIImage] = []
+//    static var previews: some View {
+//        
+//        
+//        // Do this for each image.
+////        let image = UIImage(named: ".image1") ?? UIImage()
+////        self.myImagesArray.append(image)
+////        
+////        AutoScrollerCarousel(imageNames: myImagesArray)
+//    }
+//}
 
 
 /*#Preview {
