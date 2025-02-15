@@ -8,7 +8,9 @@
 import SwiftUI
 
 struct AutoScrollerCarousel: View {
-    var imageNames: [UIImage]
+    //var imageNames: [UIImage]
+    var imageNames: [CarouselViewChild]
+   // var imageNames2: [ImageResource]
     //var imageNames: [ContentSource]
        let timer = Timer.publish(every: 2.5, on: .main, in: .common).autoconnect()
        
@@ -20,19 +22,21 @@ struct AutoScrollerCarousel: View {
                    .ignoresSafeArea()
 
                TabView(selection: $selectedImageIndex) {
-                   ForEach(imageNames, id: \.self) { logo in
+                   ForEach(imageNames) { view in
+                   //ForEach(imageNames, id: \.self) { logo in
                    //ForEach(0..<imageNames.count, id: \.self) { index in
                        ZStack(alignment: .topLeading) {
                           // ._\(imageNames[index])"
-                           Image (uiImage: logo)
-                               .resizable()
-                               .tag(logo)
+                           view
+                           //Image (uiImage: logo)
+                               //.resizable()
+                               //.tag(view)
                                .frame(width: 350, height: 200)
                        }
                     
                        .shadow(radius: 20)
                        .onTapGesture {
-                           print("is tappable now! \(logo)")
+                           print("is tappable now! \(view)")
                        }
                    }
                }
@@ -62,8 +66,29 @@ struct AutoScrollerCarousel: View {
     
 }
 
-#Preview {
 
-    AutoScrollerCarousel(imageNames: [ UIImage(named: "image1")!
-    ])
+struct Previewss: PreviewProvider {
+    var myImagesArray: [UIImage] = []
+    static var previews: some View {
+        
+        
+        // Do this for each image.
+        let image = UIImage(named: ".image1") ?? UIImage()
+        self.myImagesArray.append(image)
+        
+        AutoScrollerCarousel(imageNames: myImagesArray)
+    }
 }
+
+
+/*#Preview {
+
+    
+    var myImagesArray: [UIImage]
+    // Do this for each image.
+    let image = UIImage(named: "image1") ?? UIImage()
+    myImagesArray.append(image)
+    
+    AutoScrollerCarousel(imageNames: myImagesArray)
+}
+*/
