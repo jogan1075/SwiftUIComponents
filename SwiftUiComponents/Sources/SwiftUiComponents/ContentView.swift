@@ -13,12 +13,3 @@ struct Previews: PreviewProvider {
         ContentView()
     }
 }
-
-
-#Preview {
-    ContentView()
-    
-    Image(._7)
-}
-
-

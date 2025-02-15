@@ -6,9 +6,23 @@ import SwiftUI
 struct ComponentsList: View {
     
     var body: some View {
-        NavigationView {
-            ViewsList()
-            .navigationTitle("Menú")
+        VStack {
+            NavigationView {
+                ViewsList()
+                    .navigationTitle("Menu")
+                    .listStyle(.insetGrouped)
+                    .background(Color.gray.opacity(0.3))
+                    .scrollContentBackground(.hidden)
+                    .navigationBarTitleDisplayMode(.automatic)
+            }
+            Spacer()
+            HStack {
+                Spacer()
+                Text("Versión:\(PackageVersion.version)")
+                            .padding()
+            }
+                
+                
         }
     }
     
