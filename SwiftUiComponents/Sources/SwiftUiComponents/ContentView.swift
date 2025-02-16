@@ -9,13 +9,6 @@ struct ContentView: View {
 }
 
 
-@available(iOS 16.1, *)
-struct Previews: PreviewProvider {
-    static var previews: some View {
-        ContentView()
-    }
-}
-
 
 #Preview {
     if #available(iOS 16.1, *) {
@@ -26,5 +19,3 @@ struct Previews: PreviewProvider {
     
 //    Image(._7)
 }
-
-
