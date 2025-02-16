@@ -2,13 +2,17 @@ import SwiftUI
 import Charts
 
 @available(iOS 16.1, *)
-struct VerticalBarMarkView: View {
+public struct VerticalBarMarkView: View {
     
-    var barTitle: String
-    @Binding var data: [TransactionsData]
+    let barTitle: String
+    @Binding let data: [TransactionsData]
 
+    init(barTitle: String, data: [TransactionsData]) {
+        self.barTitle = barTitle
+        self.data = data
+    }
    
-    var body: some View {
+    public var body: some View {
         VStack {
             Text(barTitle)
                 .fontDesign(.rounded)

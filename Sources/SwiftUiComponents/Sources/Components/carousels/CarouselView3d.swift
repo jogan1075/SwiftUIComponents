@@ -16,7 +16,11 @@ struct CarouselView3d: View {
     @State private var draggingItem = 1.0
     @State private var activeIndex: Int = 0
     
-    var views: [CarouselViewChild] = placeHolderCarouseChildView
+    let views: [CarouselViewChild] = placeHolderCarouseChildView
+    
+    init(views: [CarouselViewChild]) {
+        self.views = views  
+    }
     
     var body: some View {
         ZStack{
@@ -61,7 +65,7 @@ struct CarouselView3d: View {
 }
 
 #Preview {
-    CarouselView3d()
+    //CarouselView3d()
 }
 
 @MainActor

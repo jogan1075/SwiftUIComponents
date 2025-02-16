@@ -1,11 +1,16 @@
 import SwiftUI
 
-struct CakeBarView: View {
+public struct CakeBarView: View {
     
-    var color: Color
-    @Binding var percentage: Double
+    let color: Color
+    @Binding let percentage: Double
     
-    var body: some View {
+    init(color: Color, percentage: Double) {
+        self.color = color
+        self.percentage = percentage
+    }
+    
+    public var body: some View {
         VStack {
                 
             ZStack {

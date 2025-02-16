@@ -2,13 +2,19 @@ import SwiftUI
 import Charts
 
 @available(iOS 16.0, *)
-struct StaticColorBarMarkView: View {
+public struct StaticColorBarMarkView: View {
     
     var barTitle: String
     var color: Color
     @Binding var data: [TransactionsData]
+    
+    init(barTitle: String, color: Color, data: [TransactionsData]) {
+        self.barTitle = barTitle
+        self.color = color
+        self.data = data
+    }
 
-    var body: some View {
+    public var body: some View {
         VStack {
             Text(barTitle)
                 .font(.title)
