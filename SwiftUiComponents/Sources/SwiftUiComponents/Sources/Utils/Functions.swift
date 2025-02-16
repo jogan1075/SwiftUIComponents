@@ -10,3 +10,4 @@ func NumberToString(_ number: Int) -> String {
     formatter.groupingSeparator = "."
     return formatter.string(from: NSNumber(value: number)) ?? "\(number)"
 }
+

@@ -8,10 +8,9 @@
 import SwiftUI
 
 struct AutoScrollerCarousel: View {
-    //var imageNames: [UIImage]
+
     var imageNames: [CarouselViewChild]
-   // var imageNames2: [ImageResource]
-    //var imageNames: [ContentSource]
+
        let timer = Timer.publish(every: 2.5, on: .main, in: .common).autoconnect()
        
        @State private var selectedImageIndex: Int = 0
@@ -23,15 +22,9 @@ struct AutoScrollerCarousel: View {
 
                TabView(selection: $selectedImageIndex) {
                    ForEach(imageNames) { view in
-                   //ForEach(imageNames, id: \.self) { logo in
-                   //ForEach(0..<imageNames.count, id: \.self) { index in
+//                       Print(view.id)
                        ZStack(alignment: .topLeading) {
-                          // ._\(imageNames[index])"
                            view
-                           //Image (uiImage: logo)
-                               //.resizable()
-                               //.tag(view)
-                               .frame(width: 350, height: 200)
                        }
                     
                        .shadow(radius: 20)
@@ -66,29 +59,36 @@ struct AutoScrollerCarousel: View {
     
 }
 
-
-//struct Previewss: PreviewProvider {
-//    var myImagesArray: [UIImage] = []
-//    static var previews: some View {
-//        
-//        
-//        // Do this for each image.
-////        let image = UIImage(named: ".image1") ?? UIImage()
-////        self.myImagesArray.append(image)
-////        
-////        AutoScrollerCarousel(imageNames: myImagesArray)
-//    }
-//}
-
-
-/*#Preview {
-
-    
-    var myImagesArray: [UIImage]
-    // Do this for each image.
-    let image = UIImage(named: "image1") ?? UIImage()
-    myImagesArray.append(image)
-    
-    AutoScrollerCarousel(imageNames: myImagesArray)
+extension View {
+    func Print(_ vars: Any...) -> some View {
+        for v in vars { print(v) }
+        return EmptyView()
+    }
 }
-*/
+
+#Preview {
+    var tempViews: [CarouselViewChild] = []
+    for i in (1...7){
+//        print("is tappable now! \(i)")
+        tempViews.append(
+            CarouselViewChild(id: i, content: {
+               
+                ZStack{
+                    
+                    Image("image\(i)", bundle: .module)
+                        .resizable()
+                        .tag(i)
+                        .frame(width: 350, height: 200)
+                }
+                .background(VisualEffectBlur())
+                .shadow(radius: 20)
+                .onTapGesture {
+                    print("is tappable now! \(i)")
+                }
+            })
+        )
+    }
+    
+   return AutoScrollerCarousel(imageNames: tempViews)
+}
+

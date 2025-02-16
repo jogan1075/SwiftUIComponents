@@ -1,6 +1,7 @@
 import SwiftUI
 
 
+@available(iOS 16.1, *)
 struct ContentView: View {
     var body: some View {
         ComponentsList()
@@ -8,6 +9,7 @@ struct ContentView: View {
 }
 
 
+@available(iOS 16.1, *)
 struct Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
@@ -16,9 +18,13 @@ struct Previews: PreviewProvider {
 
 
 #Preview {
-    ContentView()
+    if #available(iOS 16.1, *) {
+        ContentView()
+    } else {
+        // Fallback on earlier versions
+    }
     
-    Image(._7)
+//    Image(._7)
 }
 
 

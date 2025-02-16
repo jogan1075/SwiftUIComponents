@@ -10,7 +10,7 @@ import SwiftUI
 struct CarouselAutoScrollScreen: View {
     var body: some View {
         ZStack{
-        //AutoScrollerCarousel(imageNames: getChildViews())
+        AutoScrollerCarousel(imageNames: getChildViews())
         }
         .ignoresSafeArea()
         .frame( maxWidth: .infinity,  maxHeight: .infinity)
@@ -20,27 +20,43 @@ struct CarouselAutoScrollScreen: View {
         var tempViews: [CarouselViewChild] = []
         
         for i in (1...7){
+//
             tempViews.append(
+              
                 CarouselViewChild(id: i, content: {
-                    ZStack{
-                        Image("\(i)")
+                   
+                    VStack{
+                        
+                        Image("image\(i)", bundle: .module)
                             .resizable()
-                            .aspectRatio(contentMode: .fill)
-                            .mask{
-                                RoundedRectangle(cornerRadius: 18)
-                                    .frame(width: 250,height: 400)
-                            }
+                            .frame(width: 350, height: 200)
+                        
+                        Print("is image! \(i)")
                     }
-                    .frame(width: 250, height: 400)
-                    .shadow(radius: 10)
+                    .background(VisualEffectBlur())
+                    .shadow(radius: 20)
+                    .onTapGesture {
+                        print("is tappable now! \(i)")
+                    }
                 })
             )
+//            Print("is images! \(tempViews)")
         }
+        
+//        Print("is images! \(tempViews)")
         return tempViews
         
     }
+    
+   
 }
 
+//extension View {
+//    func Print(_ vars: Any...) -> some View {
+//        for v in vars { print(v) }
+//        return EmptyView()
+//    }
+//}
 #Preview {
     CarouselAutoScrollScreen()
 }

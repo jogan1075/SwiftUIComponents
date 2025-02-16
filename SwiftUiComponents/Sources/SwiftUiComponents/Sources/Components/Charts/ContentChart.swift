@@ -1,5 +1,6 @@
 import SwiftUI
 
+
 @available(iOS 16.1, *)
 struct ContentChart: View {
     
@@ -13,9 +14,11 @@ struct ContentChart: View {
 }
 
 #Preview {
+    
     if #available(iOS 16.1, *) {
         ContentChart()
     } else {
         // Fallback on earlier versions
     }
+    
 }

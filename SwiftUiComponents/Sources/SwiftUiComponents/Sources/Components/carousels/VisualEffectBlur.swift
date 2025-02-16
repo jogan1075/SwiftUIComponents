@@ -7,10 +7,6 @@
 
 import SwiftUI
 
-
-import SwiftUI
-/*
-@MainActor
 struct VisualEffectBlur<Content: View>: View {
     var blurStyle: UIBlurEffect.Style
     var vibrancyStyle: UIVibrancyEffectStyle?
@@ -22,7 +18,7 @@ struct VisualEffectBlur<Content: View>: View {
         self.content = content()
     }
     
-    @MainActor
+   
     var body: some View {
         Representable(blurStyle: blurStyle, vibrancyStyle: vibrancyStyle, content: ZStack { content })
             .accessibility(hidden: Content.self == EmptyView.self)
@@ -51,7 +47,6 @@ extension VisualEffectBlur {
     }
 }
 
-@MainActor
 extension VisualEffectBlur.Representable {
     @MainActor
     class Coordinator {
@@ -108,4 +103,4 @@ extension VisualEffectBlur where Content == EmptyView {
     }
     .previewLayout(.sizeThatFits)
 }
- */
+
