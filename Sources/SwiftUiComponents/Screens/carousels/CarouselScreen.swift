@@ -7,8 +7,10 @@
 
 import SwiftUI
 
+@available(iOS 16.1, *)
 struct CarouselScreen: View {
-    var body: some View {
+    
+     var body: some View {
         
         VStack {
             NavigationLink(destination: CarouselAutoScrollScreen()) {
@@ -38,7 +40,8 @@ struct CarouselScreen: View {
         
     }
 }
-
+/*
 #Preview {
     CarouselScreen()
 }
+*/
