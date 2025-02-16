@@ -8,8 +8,6 @@ struct ContentView: View {
     }
 }
 
-
-
 #Preview {
     if #available(iOS 16.1, *) {
         ContentView()
@@ -17,5 +15,5 @@ struct ContentView: View {
         // Fallback on earlier versions
     }
     
-//    Image(._7)
+    //    Image(._7)
 }
