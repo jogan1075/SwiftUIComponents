@@ -2,13 +2,19 @@ import SwiftUI
 import Charts
 
 @available(iOS 16.1, *)
-struct StaticColorHorizontalBarView: View {
+public struct StaticColorHorizontalBarView: View {
     
-    var barTitle: String
-    var color: Color
-    var data: [TransactionsData]
+    let barTitle: String
+    let color: Color
+    let data: [TransactionsData]
+    
+    init(barTitle: String, color: Color, data: [TransactionsData]) {
+        self.barTitle = barTitle
+        self.color = color
+        self.data = data
+    }
 
-    var body: some View {
+    public var body: some View {
         Text(barTitle)
             .fontDesign(.rounded)
             .fontWeight(.bold)

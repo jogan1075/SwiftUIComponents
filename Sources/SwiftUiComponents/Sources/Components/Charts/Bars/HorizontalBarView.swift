@@ -2,12 +2,17 @@ import SwiftUI
 import Charts
 
 @available(iOS 16.1, *)
-struct HorizontalBarView: View {
+public struct HorizontalBarView: View {
     
-    var barTitle: String
-    var data: [TransactionsData]
-
-    var body: some View {
+    let barTitle: String
+    let data: [TransactionsData]
+    
+    init(barTitle: String, data: [TransactionsData]) {
+        self.barTitle = barTitle
+        self.data = data
+    }
+    
+    public var body: some View {
         Text(barTitle)
             .fontDesign(.rounded)
             .fontWeight(.bold)
