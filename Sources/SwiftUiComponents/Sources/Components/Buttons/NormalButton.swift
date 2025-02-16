@@ -1,13 +1,20 @@
 import SwiftUI
 
 public struct SimpleButtonView: View {
+    let message: String
+    let textPrint: String
+    public init(message: String,textPrint: String){
+        self.message = message
+        self.textPrint = textPrint
+    }
+    
     public var body: some View {
 
         VStack {
             Button{
-                print("preciono")
+                print(textPrint)
             } label: {
-                Text("Click here!")
+                Text(message)
                     .fontWeight(.bold)
                     .padding()
                     .foregroundColor(.white)
@@ -19,6 +26,6 @@ public struct SimpleButtonView: View {
     }
 }
 
-/*#Preview {
-    SimpleButtonView()
-}*/
+#Preview {
+    SimpleButtonView(message: "dame Click", textPrint: "me presionaron!!!!")
+}
