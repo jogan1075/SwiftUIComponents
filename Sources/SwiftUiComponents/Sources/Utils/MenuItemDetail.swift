@@ -1,16 +1,17 @@
 import SwiftUI
 
 @available(iOS 16.1, *)
-struct MenuItemDetail: View {
+public struct MenuItemDetail: View {
     let item: MenuItems
-    var body: some View {
+    public var body: some View {
         switch item.id {
         case 1:
             Text("No Item available yet")
         case 2 :
             Text("No Item available yet")
         case 6 :
-            CarouselScreen()
+            Text("No Item available yet")
+            //CarouselScreen()
         case 10 :
             ContentChart()
 

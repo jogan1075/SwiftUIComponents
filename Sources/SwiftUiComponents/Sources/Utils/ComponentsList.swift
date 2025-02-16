@@ -18,8 +18,7 @@ struct ComponentsList: View {
             Spacer()
             HStack {
                 Spacer()
-                Text("Versión:\(PackageVersion.version)")
-                            .padding()
+                //Text("Versión:\(PackageVersion.version)").padding()
             }
                 
                 
