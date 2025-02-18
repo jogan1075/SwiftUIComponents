@@ -70,7 +70,7 @@ extension View {
     }
 }
 
-
+/*
 #Preview {
     var tempViews: [CarouselViewChild] = []
     for i in (1...7){
@@ -94,6 +94,7 @@ extension View {
         )
     }
     
-    return AutoScrollerCarousel(imageNames: tempViews)
+   return AutoScrollerCarousel(imageNames: tempViews)
 }
+ */
 
