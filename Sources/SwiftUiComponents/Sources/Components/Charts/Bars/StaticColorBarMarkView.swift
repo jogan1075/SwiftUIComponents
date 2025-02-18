@@ -8,10 +8,10 @@ public struct StaticColorBarMarkView: View {
     var color: Color
     @Binding var data: [TransactionsData]
     
-    init(barTitle: String, color: Color, data: [TransactionsData]) {
+    init(barTitle: String, color: Color, data: Binding<[TransactionsData]>) {
         self.barTitle = barTitle
         self.color = color
-        self.data = data
+        self._data = data
     }
 
     public var body: some View {
@@ -48,7 +48,7 @@ public struct StaticColorBarMarkView: View {
 #Preview {
         
     if #available(iOS 16.0, *) {
-        StaticColorBarMarkView(barTitle: "Ventas Dinamicas", color: .blue, data: .constant(dataSales))
+       // StaticColorBarMarkView(barTitle: "Ventas Dinamicas", color: .blue, data: dataSales)
     } else {
         // Fallback on earlier versions
     }

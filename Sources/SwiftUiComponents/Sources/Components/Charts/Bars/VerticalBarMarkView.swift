@@ -5,11 +5,11 @@ import Charts
 public struct VerticalBarMarkView: View {
     
     let barTitle: String
-    @Binding let data: [TransactionsData]
+    @Binding var data: [TransactionsData]
 
-    init(barTitle: String, data: [TransactionsData]) {
+    init(barTitle: String, data: Binding<[TransactionsData]>) {
         self.barTitle = barTitle
-        self.data = data
+        self._data = data
     }
    
     public var body: some View {
@@ -46,9 +46,7 @@ public struct VerticalBarMarkView: View {
 
 #Preview {
         
-    if #available(iOS 16.1, *) {
-        VerticalBarMarkView(barTitle: "Diagram Title", data: .constant(dataSales))
-    } else {
-        // Fallback on earlier versions
-    }
+    //if #available(iOS 16.1, *) {
+       // VerticalBarMarkView(barTitle: "Diagram Title", data: dataSales)
+   //}
 }

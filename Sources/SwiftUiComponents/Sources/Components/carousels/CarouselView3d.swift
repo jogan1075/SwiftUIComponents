@@ -8,7 +8,7 @@
 
 import SwiftUI
 
-struct CarouselView3d: View {
+public struct CarouselView3d: View {
     
     var xDistance: Int = 150
     
@@ -16,13 +16,13 @@ struct CarouselView3d: View {
     @State private var draggingItem = 1.0
     @State private var activeIndex: Int = 0
     
-    let views: [CarouselViewChild] = placeHolderCarouseChildView
+    @Binding var views: [CarouselViewChild] 
     
-    init(views: [CarouselViewChild]) {
-        self.views = views  
+    init(views: Binding<[CarouselViewChild]>) {
+        self._views = views
     }
     
-    var body: some View {
+    public var body: some View {
         ZStack{
             ForEach(views) { view in
                 view
@@ -68,6 +68,7 @@ struct CarouselView3d: View {
     //CarouselView3d()
 }
 
+/*
 @MainActor
 let placeHolderCarouseChildView: [CarouselViewChild] = [
     CarouselViewChild(id: 1, content: {
@@ -98,3 +99,4 @@ let placeHolderCarouseChildView: [CarouselViewChild] = [
         .frame(width: 200, height: 400)
     })
 ]
+*/

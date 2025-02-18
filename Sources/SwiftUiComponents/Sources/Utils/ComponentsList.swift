@@ -2,7 +2,7 @@
 
 import SwiftUI
 
-@available(iOS 16.1, *)
+//@available(iOS 16.1, *)
 struct ComponentsList: View {
     
     var body: some View {
@@ -28,9 +28,7 @@ struct ComponentsList: View {
 }
 
 #Preview {
-    if #available(iOS 16.1, *) {
+    //if #available(iOS 16.1, *) {
         ComponentsList()
-    } else {
-        // Fallback on earlier versions
-    }
+   //}
 }
