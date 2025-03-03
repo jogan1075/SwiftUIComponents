@@ -1,8 +1,10 @@
 import SwiftUI
 
 public struct SimpleButtonView: View {
+    
     let message: String
     let textPrint: String
+    
     public init(message: String,textPrint: String){
         self.message = message
         self.textPrint = textPrint
@@ -25,6 +27,7 @@ public struct SimpleButtonView: View {
         
     }
 }
+
 
 #Preview {
     SimpleButtonView(message: "dame Click", textPrint: "me presionaron!!!!")

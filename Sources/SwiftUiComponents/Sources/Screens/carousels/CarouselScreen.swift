@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-@available(iOS 16.1, *)
+//@available(iOS 16.1, *)
 struct CarouselScreen: View {
     
     var body: some View {
@@ -15,13 +15,14 @@ struct CarouselScreen: View {
             NavigationLink(destination: CarouselItemDetail(item: item)) {
                 Text(item.title)
             }
-        }    }
+        }
+    }
+    //
     
     
-}
 }
 
 #Preview {
-    CarouselScreen()
+    //    CarouselScreen()
 }
 

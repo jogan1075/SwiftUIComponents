@@ -11,7 +11,7 @@ struct PieView: View {
                     .font(.caption)
                 Slider(value: $percentage, in: 0...100, step: 1)
                     .frame(width: 250)
-                CakeBarView(color: .yellow, percentage: $percentage)
+                CakeBarView(color: .yellow, percentaje: $percentage)
             }
             .padding()
         }
@@ -19,5 +19,7 @@ struct PieView: View {
 }
 
 #Preview {
-    PieView()
+    
+     var percent: Double = 100
+    PieView(percentage: percent)
 }

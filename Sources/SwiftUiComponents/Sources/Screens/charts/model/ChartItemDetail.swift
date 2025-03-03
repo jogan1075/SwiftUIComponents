@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(iOS 16.1, *)
+//@available(iOS 16.1, *)
 struct ChartsMenuItemDetail: View {
     let item: MenuItems
     
@@ -27,3 +27,4 @@ struct ChartsMenuItemDetail: View {
         }
     }
 }
+

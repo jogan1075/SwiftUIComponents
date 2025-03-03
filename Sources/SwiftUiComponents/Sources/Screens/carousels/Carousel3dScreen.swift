@@ -10,7 +10,7 @@ import SwiftUI
 struct Carousel3dScreen: View {
     var body: some View {
         ZStack{
-            CarouselView3d(views: getChildViews())
+//            CarouselView3d(views: getChildViews())
         }
         .ignoresSafeArea()
         .frame( maxWidth: .infinity,  maxHeight: .infinity)
@@ -43,5 +43,5 @@ struct Carousel3dScreen: View {
 }
 
 #Preview {
-    Carousel3dScreen()
+//    Carousel3dScreen()
 }

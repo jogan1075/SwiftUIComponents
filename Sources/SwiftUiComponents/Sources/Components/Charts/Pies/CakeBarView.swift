@@ -2,7 +2,7 @@ import SwiftUI
 
 public struct CakeBarView: View {
     
-     let color: Color
+    let color: Color
     @Binding  var percentage: Double
     
     public init(color: Color, percentaje: Binding<Double>) {
@@ -49,5 +49,5 @@ struct CakeBarContainer: View {
 }
 
 #Preview {
-   // CakeBarContainer()
+    CakeBarContainer()
 }

@@ -35,9 +35,9 @@ struct BarsView: View {
 }
 
 #Preview {
-    if #available(iOS 16.1, *) {
+//    if #available(iOS 16.1, *) {
         BarsView()
-    } else {
+//    } else {
         // Fallback on earlier versions
-    }
+//    }
 }

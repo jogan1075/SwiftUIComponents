@@ -10,7 +10,7 @@ import SwiftUI
 struct CarouselAutoScrollScreen: View {
     var body: some View {
         ZStack{
-        AutoScrollerCarousel(imageNames: getChildViews())
+//        AutoScrollerCarousel(imageNames: getChildViews())
         }
         .ignoresSafeArea()
         .frame( maxWidth: .infinity,  maxHeight: .infinity)

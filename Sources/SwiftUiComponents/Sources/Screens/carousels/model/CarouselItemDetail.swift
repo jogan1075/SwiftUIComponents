@@ -1,6 +1,6 @@
 import SwiftUI
 
-@available(iOS 16.1, *)
+//@available(iOS 16.1, *)
 struct CarouselItemDetail: View {
     let item: MenuItems
     
