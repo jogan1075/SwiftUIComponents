@@ -43,5 +43,5 @@ struct Carousel3dScreen: View {
 }
 
 #Preview {
-//    Carousel3dScreen()
+    Carousel3dScreen()
 }

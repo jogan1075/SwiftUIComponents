@@ -18,9 +18,9 @@ public struct CarouselView3d: View {
     
     @Binding var views: [CarouselViewChild] 
     
-    init(views: Binding<[CarouselViewChild]>) {
-        self._views = views
-    }
+//    init(views: Binding<[CarouselViewChild]>) {
+//        self._views = views
+//    }
     
     public var body: some View {
         ZStack{
